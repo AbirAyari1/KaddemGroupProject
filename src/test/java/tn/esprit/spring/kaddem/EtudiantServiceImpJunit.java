@@ -21,7 +21,7 @@ public class EtudiantServiceImpJunit {
     Etudiant e2 = new Etudiant("Boussema", "Ahmed");
     @Test
     @Order(1)
-    public void testaddProdiut() {
+    public void testaddEtudiantt() {
         Etudiant etudiantAdded = etudiantService.addEtudiant(e1);
         Assertions.assertEquals(etudiantAdded.getIdEtudiant(), etudiantAdded.getIdEtudiant());
     }
