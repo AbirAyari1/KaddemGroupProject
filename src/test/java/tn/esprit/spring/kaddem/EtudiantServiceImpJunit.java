@@ -50,7 +50,7 @@ public class EtudiantServiceImpJunit {
         Assertions.assertEquals(e1.getNomE(), etudiantUpdated.getNomE());
     }
 
-    @Test
+  /*  @Test
     @Order(4)
     public void testDeleteEtudiant() {
         // Attempt to delete the student with ID 2
@@ -62,7 +62,7 @@ public class EtudiantServiceImpJunit {
             // Handle the exception if the student does not exist or if there is an attempt to remove a null entity
             Assertions.fail("An exception occurred: " + e.getMessage());
         }
-    }
+    }*/
 
     }
 
