@@ -45,6 +45,5 @@ public class EtudiantServiceImpMock {
        Etudiant etudiant1 = etudiantService.addEtudiant(e1);
         //assertNotNull(produit1);
         Mockito.verify(etudiantRepository).save(Mockito.any(Etudiant.class));
-        System.out.println("3");
     }
 }
