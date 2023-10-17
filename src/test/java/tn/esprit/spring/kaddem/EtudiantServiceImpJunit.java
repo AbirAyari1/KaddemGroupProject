@@ -37,9 +37,9 @@ public class EtudiantServiceImpJunit {
     @Test
     @Order(3)
     public void testRetrieveEtudiant() {
-        Etudiant etudiantRetrieved = etudiantService.retrieveEtudiant(1);
+        Etudiant etudiantRetrieved = etudiantService.retrieveEtudiant(6);
         Assertions.assertNotNull(etudiantRetrieved);
-        Assertions.assertEquals(1, etudiantRetrieved.getIdEtudiant().longValue());
+        Assertions.assertEquals(6, etudiantRetrieved.getIdEtudiant().longValue());
     }
 
     @Test
