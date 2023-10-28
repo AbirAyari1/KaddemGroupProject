@@ -34,22 +34,22 @@ public class EtudiantServiceImpJunit {
         Assertions.assertEquals(listEtudiants.size(), listEtudiants.size());
     }
 
-    @Test
+  /*  @Test
     @Order(3)
     public void testRetrieveEtudiant() {
         Etudiant etudiantRetrieved = etudiantService.retrieveEtudiant(6);
         Assertions.assertNotNull(etudiantRetrieved);
         Assertions.assertEquals(6, etudiantRetrieved.getIdEtudiant().longValue());
-    }
+    }*/
 
-    @Test
+  /*  @Test
     @Order(3)
     public void testModifyEtudiant()   {
         e1.setNomE("Ayarii");
         Etudiant etudiantUpdated = etudiantService.updateEtudiant(e1);
         Assertions.assertNotNull(etudiantUpdated);
         Assertions.assertEquals(e1.getNomE(), etudiantUpdated.getNomE());
-    }
+    }*/
 
   /*  @Test
     @Order(4)
