@@ -34,7 +34,6 @@ public class EtudiantServiceImpJunit {
         Assertions.assertEquals(listEtudiants.size(), listEtudiants.size());
     }
 
-<<<<<<< HEAD
   /*  @Test
 =======
   /*    @Test
@@ -53,7 +52,7 @@ public class EtudiantServiceImpJunit {
         Etudiant etudiantUpdated = etudiantService.updateEtudiant(e1);
         Assertions.assertNotNull(etudiantUpdated);
         Assertions.assertEquals(e1.getNomE(), etudiantUpdated.getNomE());
-    }*/
+    }
 
   @Test
     @Order(4)
@@ -67,7 +66,7 @@ public class EtudiantServiceImpJunit {
             // Handle the exception if the student does not exist or if there is an attempt to remove a null entity
             Assertions.fail("An exception occurred: " + e.getMessage());
         }
-    }*/
+    } */
 
     }
 
