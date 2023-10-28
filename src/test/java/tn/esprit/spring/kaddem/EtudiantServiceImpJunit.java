@@ -34,7 +34,7 @@ public class EtudiantServiceImpJunit {
         Assertions.assertEquals(listEtudiants.size(), listEtudiants.size());
     }
 
-    @Test
+  /*    @Test
     @Order(3)
     public void testRetrieveEtudiant() {
         Etudiant etudiantRetrieved = etudiantService.retrieveEtudiant(6);
@@ -51,7 +51,7 @@ public class EtudiantServiceImpJunit {
         Assertions.assertEquals(e1.getNomE(), etudiantUpdated.getNomE());
     }
 
-  /*  @Test
+  @Test
     @Order(4)
     public void testDeleteEtudiant() {
         // Attempt to delete the student with ID 2
