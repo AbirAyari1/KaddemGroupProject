@@ -1,4 +1,4 @@
-FROM openjdk:11
+FROM openjdk:8-jdk-alpine
 COPY target/*.jar /
 EXPOSE 8089
-ENTRYPOINT ["java","-jar","/kaddem-1.0.jar"]
+ENTRYPOINT ["java","-jar","/*.jar"]
