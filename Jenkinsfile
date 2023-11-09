@@ -13,7 +13,7 @@ pipeline {
         stage('Git') {
             steps {
                 echo 'Getting project from Git'
-                git branch :'Yosra'  ,
+                git branch :'Habib'  ,
                 url : 'https://github.com/AbirAyari1/KaddemGroupProject.git'
             }
         }
