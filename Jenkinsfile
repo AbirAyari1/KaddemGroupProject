@@ -17,5 +17,10 @@ pipeline {
                 url : 'https://github.com/AbirAyari1/KaddemGroupProject.git'
             }
         }
+        stage ('MVN clean'){
+            steps{
+                sh 'mvn clean';
+           }    
+        }
     }
 }
