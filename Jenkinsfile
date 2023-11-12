@@ -1,4 +1,7 @@
 pipeline {
+	environment { 
+        DOCKER_CREDENTIALS = credentials('docker')
+    }
     agent any
     tools{
          maven 'M2_HOME'
@@ -42,7 +45,7 @@ pipeline {
                 // Étape du build de l'image docker de l'application spring boot
 		 script {
 			// Generating image from Dockerfile
-			  sh 'docker build -t daoud123/gestion-station-ski-1.0.jar .'
+			  sh 'docker build -t daoud123/kaddem-1.0.jar .'
 			}
 		 }
 	    }
@@ -54,7 +57,7 @@ pipeline {
                            sh "docker login -u ${DOCKER_CREDENTIALS_USR} -p ${DOCKER_CREDENTIALS_PSW}"
                     
                     // Push Docker image
-                           sh 'docker push daoud123/gestion-station-ski-1.0.jar'
+                           sh 'docker push daoud123/kaddem-1.0.jar'
                 }
 	   	 }
 	     } 
