@@ -1,6 +1,5 @@
 package tn.esprit.spring.kaddem.services;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import tn.esprit.spring.kaddem.entities.Departement;
 import tn.esprit.spring.kaddem.entities.Universite;
@@ -11,43 +10,46 @@ import java.util.List;
 import java.util.Set;
 
 @Service
-public class UniversiteServiceImpl implements IUniversiteService{
-final
-UniversiteRepository universiteRepository;
-final
-DepartementRepository departementRepository;
+public class UniversiteServiceImpl implements IUniversiteService {
+    final
+    UniversiteRepository universiteRepository;
+    final
+    DepartementRepository departementRepository;
+
     public UniversiteServiceImpl(UniversiteRepository universiteRepository, DepartementRepository departementRepository) {
         this.universiteRepository = universiteRepository;
         this.departementRepository = departementRepository;
     }
-  public   List<Universite> retrieveAllUniversites(){
-return (List<Universite>) universiteRepository.findAll();
+
+    public List<Universite> retrieveAllUniversites() {
+        return (List<Universite>) universiteRepository.findAll();
     }
 
- public    Universite addUniversite (Universite  u){
-return  (universiteRepository.save(u));
+    public Universite addUniversite(Universite u) {
+        return (universiteRepository.save(u));
     }
 
- public    Universite updateUniversite (Universite  u){
-     return  (universiteRepository.save(u));
+    public Universite updateUniversite(Universite u) {
+        return (universiteRepository.save(u));
     }
 
-  public Universite retrieveUniversite (Integer idUniversite){
-      return universiteRepository.findById(idUniversite).get();
+    public Universite retrieveUniversite(Integer idUniversite) {
+        return universiteRepository.findById(idUniversite).get();
     }
-    public  void deleteUniversite(Integer idUniversite){
+
+    public void deleteUniversite(Integer idUniversite) {
         universiteRepository.delete(retrieveUniversite(idUniversite));
     }
 
-    public void assignUniversiteToDepartement(Integer idUniversite, Integer idDepartement){
-        Universite u= universiteRepository.findById(idUniversite).orElse(null);
-        Departement d= departementRepository.findById(idDepartement).orElse(null);
+    public void assignUniversiteToDepartement(Integer idUniversite, Integer idDepartement) {
+        Universite u = universiteRepository.findById(idUniversite).orElseThrow(()->new NullPointerException("No university found"));
+        Departement d = departementRepository.findById(idDepartement).orElseThrow(()->new NullPointerException("No department found"));
         u.getDepartements().add(d);
         universiteRepository.save(u);
     }
 
-    public Set<Departement> retrieveDepartementsByUniversite(Integer idUniversite){
-Universite u=universiteRepository.findById(idUniversite).orElse(null);
-return u.getDepartements();
+    public Set<Departement> retrieveDepartementsByUniversite(Integer idUniversite) {
+        Universite u = universiteRepository.findById(idUniversite).orElseThrow(()->new NullPointerException("No university found"));
+        return u.getDepartements();
     }
 }
