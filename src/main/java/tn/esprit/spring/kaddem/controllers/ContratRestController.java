@@ -17,7 +17,7 @@ import java.util.List;
 @RequestMapping("/contrat")
 public class ContratRestController {
 	IContratService contratService;
-	ModelMapper modelMapper =new ModelMapper();
+	final ModelMapper modelMapper =new ModelMapper();
 	// http://localhost:8089/Kaddem/contrat/retrieve-all-contrats
 	@GetMapping("/retrieve-all-contrats")
 	public List<Contrat> getContrats() {
