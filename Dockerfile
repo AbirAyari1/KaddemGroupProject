@@ -1,4 +1,4 @@
 FROM openjdk:11-jre-slim
-ADD target/kaddem-0.0.1-SNAPSHOT.jar kaddem-0.0.1-SNAPSHOT.jar
+ADD target/kaddem-1.0.jar kaddem-1.0.jar
 EXPOSE 8089
-ENTRYPOINT ["java","-jar","/kaddem-0.0.1-SNAPSHOT.jar"]
+ENTRYPOINT ["java","-jar","/kaddem-1.0.jar"]

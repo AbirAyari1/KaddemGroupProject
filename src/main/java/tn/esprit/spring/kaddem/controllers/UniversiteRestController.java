@@ -1,8 +1,8 @@
 package tn.esprit.spring.kaddem.controllers;
 
-import lombok.AllArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
+import org.modelmapper.ModelMapper;
 import org.springframework.web.bind.annotation.*;
+import tn.esprit.spring.kaddem.dtos.UniversiteDTO;
 import tn.esprit.spring.kaddem.entities.Departement;
 import tn.esprit.spring.kaddem.entities.Universite;
 import tn.esprit.spring.kaddem.services.IUniversiteService;
@@ -14,6 +14,7 @@ import java.util.Set;
 @RequestMapping("/universite")
 public class UniversiteRestController {
 	final IUniversiteService universiteService;
+	final ModelMapper modelMapper =new ModelMapper();
 
 	public UniversiteRestController(IUniversiteService universiteService) {
 		this.universiteService = universiteService;
@@ -32,7 +33,8 @@ public class UniversiteRestController {
 
 	// http://localhost:8089/Kaddem/universite/add-universite
 	@PostMapping("/add-universite")
-	public Universite addUniversite(@RequestBody Universite u) {
+	public Universite addUniversite(@RequestBody UniversiteDTO udto) {
+		Universite u=this.modelMapper.map(udto,Universite.class);
 		return universiteService.addUniversite(u);
 	}
 
@@ -44,7 +46,8 @@ public class UniversiteRestController {
 
 	// http://localhost:8089/Kaddem/universite/update-universite
 	@PutMapping("/update-universite")
-	public Universite updateUniversite(@RequestBody Universite u) {
+	public Universite updateUniversite(@RequestBody UniversiteDTO udto) {
+		Universite u=this.modelMapper.map(udto,Universite.class);
 		return universiteService.updateUniversite(u);
 	}
 
