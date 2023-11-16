@@ -16,7 +16,7 @@ pipeline {
         stage('Git') {
             steps {
                 echo 'Getting project from Git'
-                git branch :'Habib'  ,
+                git branch :'HabibDaoud'  ,
                 url : 'https://github.com/AbirAyari1/KaddemGroupProject.git'
             }
         }
